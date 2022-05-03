@@ -18,3 +18,4 @@ Route::any('/register', [main::class, "reg"])->name('register');
 Route::any('/checkadmin', [main::class, "checkadmin"])->name('check');
 Route::any('/costumpage', [main::class, "costum"])->name('costum')->middleware('admin');
 Route::any('/admin', [main::class, "admin"])->name('admin');
+Route::any('/logout', [main::class, "logout"])->name('logout');

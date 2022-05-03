@@ -21,6 +21,7 @@ class admin
             // return redirect(Route('costum'));
             echo '';
         } else {
+            abort(403, 'Unauthorized action.');
             return redirect(Route('index'));
         }
         return $next($request);

@@ -77,4 +77,13 @@ class main extends Controller
 
         // return $request->all();
     }
+    function logout()
+    {
+        if (session()->has('loggedUser')) {
+            session()->pull('loggedUser');
+            return redirect(route('admin'));
+        } else {
+            return redirect(route('index'));
+        }
+    }
 }
