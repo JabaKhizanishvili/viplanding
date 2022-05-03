@@ -1,0 +1,27 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+
+class admin extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        //
+        // ვამატებ ადმინის უსერ პაროლს
+        DB::table('admin')->insert([
+            'mail' => 'admin@gmail.com',
+            'password' => Hash::make("insiteAdmin"),
+        ]);
+    }
+}
