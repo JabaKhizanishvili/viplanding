@@ -14,8 +14,8 @@ use App\Http\Controllers\main;
 */
 
 Route::get('/', [main::class, "index"])->name('index');
-Route::any('/register', [main::class, "reg"])->name('register');
+Route::post('/register', [main::class, "reg"])->name('register');
 Route::any('/checkadmin', [main::class, "checkadmin"])->name('check');
-Route::any('/costumpage', [main::class, "costum"])->name('costum')->middleware('admin');
-Route::any('/admin', [main::class, "admin"])->name('admin');
+Route::any('/adminpanel', [main::class, "costum"])->name('costum')->middleware('admin');
+Route::any('/admin', [main::class, "admin"])->name('admin')->middleware('adminchecklog');;
 Route::any('/logout', [main::class, "logout"])->name('logout');

@@ -15,14 +15,19 @@
     </div>
   </div>
   <div class="wrapper">
-    <form action="">
-      <p class="head">ან გაიარე რეგისტრაცია და შემოგვიერთდი</p>
-      <input type="text" placeholder="სახელი" name="" id="" />
-      <input type="text" placeholder="გვარი" name="" id="" />
-      <input type="text" placeholder="Email" name="" id="" />
-      <input type="tel" placeholder="ტელეფონის ნომერი" name="" id="" />
-      <button class="main_btn">რეგისტრაცია</button>
-    </form>
+    <form action="{{route('register')}}" method="POST">
+        <p class="head f30 purple">გაიარე რეგისტრაცია მარტივად</p>
+        @csrf
+        <input type="text" placeholder="სახელი" name="name" id="" value="{{old("name")}}" / >
+        <span class='text-danger'>@error('name') {{$message}} @enderror</span>
+        <input type="text" placeholder="გვარი" name="lastname" id="" value="{{old("lastname")}}" />
+        <span class='text-danger'>@error('lastname') {{$message}} @enderror</span>
+        <input type="text" placeholder="Email" name="email" id="" value="{{old("email")}}" />
+        <span class='text-danger'>@error('email') {{$message}} @enderror</span>
+        <input type="number" placeholder="ტელეფონის ნომერი" name="phone" id="" value="{{old("phone")}}" />
+        <span class='text-danger'>@error('phone') {{$message}} @enderror</span>
+        <p><button class="main_btn">რეგისტრაცია</button></p>
+      </form>
   </div>
   <img class="abs_img" src="img/bg/2.png" alt="" />
 </section>
